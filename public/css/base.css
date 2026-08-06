@@ -53,6 +53,7 @@ a {
 
 /* Site Card Component */
 .site-card{
+    display: block;
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -91,6 +92,7 @@ a {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Status Indicators */
 .site-card__status--online {
     background-color: rgba(62, 207, 142, 0.15);
     color: var(--color-success);
