@@ -50,3 +50,32 @@ thumbnails are placeholder images, real screenshots  later.
 
 ## Next Development Phase
 Phase 2: first backend function (get-sites), connecting to Supabase.
+
+##  Phase 2
+
+## Features Completed → Phase 2:
+
+First Netlify Function (get-sites) returning hardcoded site data as JSON
+Netlify CLI set up for local development (netlify dev)
+Frontend now fetches data dynamically and renders cards via JS, instead of hardcoded HTML
+
+## Architecture Decisions (add to this section):
+
+Why the fetch logic (loadSites) and the card-building logic (createSiteCard) were split into two functions rather than one — separate responsibilities, easier to reason about and reuse independently.
+Why we built the function with hardcoded data first, before touching Supabase — proving the fetch/render loop works before adding a real, harder-to-debug data source on top.
+
+## Technologies Introduced (add):
+
+Netlify Functions (serverless)
+Netlify CLI (netlify dev)
+fetch() API, Promises/async/await
+Dynamic DOM manipulation (createElement, innerHTML, querySelector)
+
+## Lessons Learned — worth including if it's true for you:
+
+The two-step await pattern with fetch (first await fetch(), then await response.json()) — easy to expect this as one step the first time you see it.
+The Netlify Function "contract" — exports.handler, and the body must be a string (JSON.stringify), not a raw object.
+
+## Next Development Phase:
+
+Phase 3: Netlify API integration — replacing the hardcoded array in get-sites.js with real deployment/site data pulled from Netlify's own API.
